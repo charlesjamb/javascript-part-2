@@ -67,4 +67,14 @@ var arrayOfObjects = [object1, object2, object3];
 
 //console.log(arrayOfObjects.sort(alphabeticalMail));
 
+/*Create a function that can be used with Array.prototype.map. This function should take a number and return its square. 
+Then, use this function with map on an array of numbers to check the result.*/
 
+function squareArray(num) {
+    return num * num
+}
+
+var arrayToSquare = [2, 4, 5, 10];
+var arraySquared = arrayToSquare.map(squareArray);
+
+console.log(arraySquared);
