@@ -48,17 +48,20 @@ function alphabeticalMail(str1, str2) {
 
 var object1 = {
     name: 'Jonnnnny',
-    email: 'jon@mail.com'
+    email: 'jon@mail.com',
+    num: 5,
 };
     
 var object2 = {
     name: 'Bobbbby',
-    email: 'bobby@mail.com'
+    email: 'bobby@mail.com',
+    num: 2,
 };
     
 var object3 = {
     name: 'Julie',
-    email: 'Julie@mail.com'
+    email: 'Julie@mail.com',
+    num: 3,
 }
 
 var arrayOfObjects = [object1, object2, object3];
@@ -70,11 +73,24 @@ var arrayOfObjects = [object1, object2, object3];
 /*Create a function that can be used with Array.prototype.map. This function should take a number and return its square. 
 Then, use this function with map on an array of numbers to check the result.*/
 
-function squareArray(num) {
-    return num * num
+function squareArray(numy) {
+    return numy * numy
 }
 
 var arrayToSquare = [2, 4, 5, 10];
 var arraySquared = arrayToSquare.map(squareArray);
 
-console.log(arraySquared);
+//console.log(arraySquared);
+
+/*Create a function that can be used with Array.prototype.map. 
+This function should be able to take an object and square its “num” property. 
+Then, use this function with map on an array of objects each containing a “num” property.*/
+
+function squareOfNum(obj) {
+    return obj.num * obj.num
+}
+
+var arrayOfObjectsSquared = arrayOfObjects.map(squareOfNum);
+
+console.log(arrayOfObjectsSquared);
+
