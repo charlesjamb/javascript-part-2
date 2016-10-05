@@ -92,5 +92,63 @@ function squareOfNum(obj) {
 
 var arrayOfObjectsSquared = arrayOfObjects.map(squareOfNum);
 
-console.log(arrayOfObjectsSquared);
+//console.log(arrayOfObjectsSquared);
 
+/*In a previous workshop, you had to create a function that took two numbers and an operation (add, sub, mult, …) 
+and returned the result of the operation on the two numbers. Here we are going to do the same but at a higher order. 
+Create a function called operationMaker that takes only a string called operation as argument. 
+This string could be “add”, “subtract”, “mult” or “div”. 
+Your function will return a function that will take two numbers 
+and return the result of running operation on these numbers.*/
+
+/*function adder(num1, num2) {
+    return num1 + num2;
+}
+
+function substracter(num1, num2) {
+    return num1 - num2;
+}
+
+function multiplier(num1, num2) {
+    return num1 * num2;
+}
+
+function divider(num1, num2) {
+    return num1 / num2;
+}*/
+
+function operationMaker(operation) {
+    
+    if (operation == "add") {
+        var sum = function adder(num1, num2) {
+            return num1 + num2;
+        }
+        return sum;
+    }
+    else if (operation == "substract") {
+        var minus = function substracter(num1, num2) {
+            return num1 - num2;
+        }
+        return minus;
+    }
+    else if (operation == "mult") {
+        var multy = function multiplier(num1, num2) {
+            return num1 * num2;
+        }
+        return multy;
+    }
+    else if (operation == "div") {
+        var division = function divider(num1, num2) {
+            return num1 / num2;
+        }
+        return division;
+    }
+    else {
+        return 0;
+    }
+}
+
+var test = operationMaker('div');
+var testFinal = test(10, 10);
+
+console.log(testFinal);
