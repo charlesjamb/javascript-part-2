@@ -17,5 +17,12 @@ function Warrior(name, gender) {
         else {
             console.log(opponent.name + ' wins!');
         }
-    }
+    };
 }
+
+var chuck = new Warrior('Chuck', 'M');
+var eve = new Warrior('Eve', 'F');
+var reese = new Warrior('Reese', 'M');
+var aly = new Warrior('Aly', 'F');
+var ian = new Warrior('Ian', 'M');
+
