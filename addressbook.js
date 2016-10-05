@@ -15,9 +15,10 @@ function Email(address, type) {
 };
 
 Person.prototype.addEmail = function(address, type) {
-    var emailToPush = new Email(address, type);
-    emailToPush.push(this.email);
+    this.email.push(new Email(address, type));
 }
 
-var test = new Person('Chuck', 'Ham');
-console.log(test)
+var chuck = new Person('Chuck', 'Ham');
+chuck.addEmail("hillary@hackedemails.com", "home");
+
+console.log(chuck);
