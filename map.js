@@ -23,28 +23,37 @@ function Tile(type) {
       }
     };
     this.getAsciiOutput = function() {
-        
-    };
+        if (this.type === 'grass') {
+            return '*';
+        }
+        else if (this.type === 'sand') {
+            return ':';
+        }
+        else {
+            return '~';
+        }
+    }
 };
 
 
 function Map(width, height) {
     this.width = parseInt(width);
+    
     this.height = parseInt(height);
-    //console.log('called!');
-    //this.tiles
+    
     this.tiles = [];
-    for (var i = 0; i <= this.height; i++) {
-        var row = [];
-        //console.log(i);
-        for (var j = 0; j <= this.width; j++) {
-            //console.log(j);
-            row.push(new Tile(randomTypes()));
-        }
-        this.tiles.push(row);
-        //console.log(row.length);
-    }
-    this.getWalkableOutput = function() {
+        for (var i = 0; i <= this.height; i++) {
+            var row = [];
+            //console.log(i);
+            for (var j = 0; j <= this.width; j++) {
+                //console.log(j);
+                row.push(new Tile(randomTypes()));
+            }
+            this.tiles.push(row);
+            //console.log(row.length);
+        };
+        
+    this.getWalkableOutput2 = function() {
         for (var i = 0; i <= this.height; i++) {
             var row = "";
             for (var j = 0; j <= this.width; j++) {
@@ -53,9 +62,18 @@ function Map(width, height) {
             console.log(row);
         }
     };
+    
+    this.getAsciiOutput2 = function() {
+        for (var i = 0; i <= this.height; i++) {
+            var row = "";
+            for (var j = 0; j <= this.width; j++) {
+                row += this.tiles[i][j].getAsciiOutput();
+            }
+            console.log(row);
+        }
+    };
+
 };
 
-
-
-var test = new Map(4, 4);
-test.getWalkableOutput();
+var test = new Map(10, 10);
+test.getAsciiOutput2();
